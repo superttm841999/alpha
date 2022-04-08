@@ -3,12 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav"
-    app:startDestination="@id/loginFragment">
-    <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.example.alpha.ui.LoginFragment"
-        android:label="Login"
-        tools:layout="@layout/fragment_login" />
+    app:startDestination="@id/homeFragment">
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.alpha.ui.HomeFragment"
@@ -24,4 +19,9 @@
         android:name="com.example.alpha.ui.ShopFoodFragment"
         android:label="Shop / Food"
         tools:layout="@layout/fragment_shop_food" />
+    <fragment
+        android:id="@+id/shopCategoryFragment"
+        android:name="com.example.alpha.ui.ShopCategoryFragment"
+        android:label="Shop Category"
+        tools:layout="@layout/fragment_shop_category" />
 </navigation>

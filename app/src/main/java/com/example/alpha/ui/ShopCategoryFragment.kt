@@ -6,15 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.alpha.R
-import com.example.alpha.databinding.FragmentLoginBinding
 
-class LoginFragment : Fragment() {
+class ShopCategoryFragment : Fragment() {
 
-    private lateinit var binding: FragmentLoginBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding = FragmentLoginBinding.inflate(inflater,container,false)
-        return binding.root
+
+        return inflater.inflate(R.layout.fragment_shop_category, container, false)
     }
 
 
