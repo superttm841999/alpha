@@ -5,15 +5,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.LoginFragment">
+    tools:context=".ui.ShopCategoryFragment">
 
     <TextView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#F44336"
-        android:text="Login"
+        android:background="#03A9F4"
+        android:text="Shop Category"
         android:textAlignment="center"
-        android:textSize="96sp"
+        android:textSize="80sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
