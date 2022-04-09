@@ -24,4 +24,14 @@
         android:name="com.example.alpha.ui.ShopCategoryFragment"
         android:label="Shop Category"
         tools:layout="@layout/fragment_shop_category" />
+    <fragment
+        android:id="@+id/insertCategoryFragment"
+        android:name="com.example.alpha.ui.InsertCategoryFragment"
+        android:label="Insert"
+        tools:layout="@layout/fragment_insert_category" />
+    <fragment
+        android:id="@+id/updateCategoryFragment"
+        android:name="com.example.alpha.ui.UpdateCategoryFragment"
+        android:label="Update"
+        tools:layout="@layout/fragment_update_category" />
 </navigation>

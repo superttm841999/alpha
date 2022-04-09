@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <group android:id="@+id/shopFood" >
+    <group android:id="@+id/shopCategory" >
         <item
             android:id="@+id/shopCategoryFragment"
-            android:title="Shop Category" />
+            android:title="List" />
         <item
-            android:id="@+id/about2Fragment"
-            android:title="About 2" />
+            android:id="@+id/insertFragment"
+            android:title="Insert" />
     </group>
 </menu>
