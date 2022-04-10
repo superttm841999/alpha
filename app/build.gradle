@@ -10,7 +10,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.alpha"
-        minSdk 32
+        minSdk 30
         targetSdk 32
         versionCode 1
         versionName "1.0"
@@ -60,5 +60,10 @@ dependencies {
     implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.recyclerview:recyclerview:1.2.1'
+
+    //phone number
+    implementation "com.googlecode.libphonenumber:libphonenumber:8.9.9"
+    implementation 'com.google.firebase:firebase-firestore:24.1.0'
+
 
 }
