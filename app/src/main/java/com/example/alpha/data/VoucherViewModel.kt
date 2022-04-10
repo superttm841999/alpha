@@ -68,7 +68,6 @@ class VoucherViewModel : ViewModel() {
     }
 
     fun validate(f: Voucher, insert: Boolean = true): String {
-        val regexId = Regex("""^[0-9A-Z]{4}$""")
         var e = ""
 
         if (insert) {

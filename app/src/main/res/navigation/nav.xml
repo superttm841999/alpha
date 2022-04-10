@@ -56,7 +56,27 @@
         tools:layout="@layout/fragment_insert_voucher" />
     <fragment
         android:id="@+id/updateVoucherFragment"
-        android:name="com.example.alpha.UpdateVoucherFragment"
+        android:name="com.example.alpha.ui.UpdateVoucherFragment"
         android:label="fragment_update_voucher"
         tools:layout="@layout/fragment_update_voucher" />
+    <fragment
+        android:id="@+id/sellerListAdminFragment"
+        android:name="com.example.alpha.ui.SellerListAdminFragment"
+        android:label="Seller List"
+        tools:layout="@layout/fragment_seller_list_admin" />
+    <fragment
+        android:id="@+id/shopFoodAdminFragment"
+        android:name="com.example.alpha.ui.ShopFoodAdminFragment"
+        android:label="Food List"
+        tools:layout="@layout/fragment_shop_food_admin" />
+    <fragment
+        android:id="@+id/insertFoodFragment"
+        android:name="com.example.alpha.ui.InsertFoodFragment"
+        android:label="Insert Food"
+        tools:layout="@layout/fragment_insert_food" />
+    <fragment
+        android:id="@+id/updateFoodFragment"
+        android:name="com.example.alpha.ui.UpdateFoodFragment"
+        android:label="Update Food"
+        tools:layout="@layout/fragment_update_food" />
 </navigation>

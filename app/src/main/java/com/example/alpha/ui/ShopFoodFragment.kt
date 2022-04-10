@@ -29,6 +29,7 @@ class ShopFoodFragment : Fragment() {
         when (item.itemId){
             R.id.shopCategoryFragment -> nav.navigate(R.id.shopCategoryFragment)
             R.id.voucherFragment -> nav.navigate(R.id.voucherFragment)
+            R.id.sellerListAdminFragment -> nav.navigate(R.id.sellerListAdminFragment)
         }
 
         return super.onOptionsItemSelected(item)

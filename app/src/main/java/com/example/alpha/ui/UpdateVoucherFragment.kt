@@ -1,4 +1,4 @@
-package com.example.alpha
+package com.example.alpha.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,7 +9,7 @@ import android.widget.ArrayAdapter
 import android.widget.Spinner
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
-import com.example.alpha.data.Category
+import com.example.alpha.R
 import com.example.alpha.data.Voucher
 import com.example.alpha.data.VoucherViewModel
 import com.example.alpha.databinding.FragmentUpdateVoucherBinding
