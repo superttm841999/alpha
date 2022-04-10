@@ -1,6 +1,9 @@
 package com.example.alpha.data
 
+import com.google.firebase.firestore.Blob
 import com.google.firebase.firestore.DocumentId
+import com.google.firebase.firestore.Exclude
+import java.util.*
 
 data class Category(
     @DocumentId
@@ -11,8 +14,36 @@ data class Category(
     var status : String = "",
 )
 
+data class Voucher(
+    @DocumentId
+    var docId : String = "",
+    var name : String = "",
+    var code : String = "",
+    var value : Double = 0.0,
+    //Invalid -0  Valid -1
+    var status : Int = 0,
+)
+
 data class Count(
     @DocumentId
     var docId   : String = "",
     var count : Int = 0,
 )
+
+data class Seller(
+    @DocumentId
+    var docId : String = "",
+    var name : String = "",
+    var date : Date = Date(),
+    var logo : Blob = Blob.fromBytes(ByteArray(0)),
+    var username : String = "",
+    var address : String = "",
+    //pending -0  approve -1  reject -2
+    var status : Int = 0,
+    var category : String = ""
+){
+    @get:Exclude
+    var count: Int = 0
+
+    override fun toString() = name
+}

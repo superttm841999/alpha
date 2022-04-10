@@ -13,13 +13,26 @@
         <entry key="..\:/Users/Dell/OneDrive - Omesti Berhad/Documents/alpha/app/src/main/res/menu/shopfood.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/knxuser/AndroidStudioProjects/alpha/app/src/main/res/layout/activity_main.xml" value="0.1796875" />
         <entry key="..\:/Users/knxuser/Documents/GitHub/alpha/app/src/main/res/drawable-v24/ic_error.xml" value="0.116" />
+        <entry key="..\:/Users/knxuser/Documents/GitHub/alpha/app/src/main/res/drawable-v24/layout_bg_item.xml" value="0.109" />
         <entry key="..\:/Users/knxuser/Documents/GitHub/alpha/app/src/main/res/drawable/ic_delete.xml" value="0.116" />
-        <entry key="..\:/Users/knxuser/Documents/GitHub/alpha/app/src/main/res/layout/fragment_insert_category.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/knxuser/Documents/GitHub/alpha/app/src/main/res/layout/fragment_approval_list.xml" value="0.22" />
+        <entry key="..\:/Users/knxuser/Documents/GitHub/alpha/app/src/main/res/layout/fragment_insert_category.xml" value="0.22" />
+        <entry key="..\:/Users/knxuser/Documents/GitHub/alpha/app/src/main/res/layout/fragment_insert_voucher.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/knxuser/Documents/GitHub/alpha/app/src/main/res/layout/fragment_item_list.xml" value="0.10104166666666667" />
+        <entry key="..\:/Users/knxuser/Documents/GitHub/alpha/app/src/main/res/layout/fragment_seller_approval.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/knxuser/Documents/GitHub/alpha/app/src/main/res/layout/fragment_shop_category.xml" value="0.1796875" />
+        <entry key="..\:/Users/knxuser/Documents/GitHub/alpha/app/src/main/res/layout/fragment_shop_food.xml" value="0.11510416666666666" />
         <entry key="..\:/Users/knxuser/Documents/GitHub/alpha/app/src/main/res/layout/fragment_update_category.xml" value="0.22" />
+        <entry key="..\:/Users/knxuser/Documents/GitHub/alpha/app/src/main/res/layout/fragment_update_voucher.xml" value="0.22" />
+        <entry key="..\:/Users/knxuser/Documents/GitHub/alpha/app/src/main/res/layout/fragment_voucher.xml" value="0.22" />
+        <entry key="..\:/Users/knxuser/Documents/GitHub/alpha/app/src/main/res/layout/item_approval_list.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/knxuser/Documents/GitHub/alpha/app/src/main/res/layout/item_category.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/knxuser/Documents/GitHub/alpha/app/src/main/res/layout/item_voucher_list.xml" value="0.22" />
+        <entry key="..\:/Users/knxuser/Documents/GitHub/alpha/app/src/main/res/menu/account.xml" value="0.1" />
+        <entry key="..\:/Users/knxuser/Documents/GitHub/alpha/app/src/main/res/menu/main.xml" value="0.1" />
         <entry key="..\:/Users/knxuser/Documents/GitHub/alpha/app/src/main/res/menu/shopcategory.xml" value="0.1796875" />
         <entry key="..\:/Users/knxuser/Documents/GitHub/alpha/app/src/main/res/menu/shopfood.xml" value="0.1796875" />
+        <entry key="..\:/Users/knxuser/Documents/GitHub/alpha/app/src/main/res/menu/voucher.xml" value="0.1" />
       </map>
     </option>
   </component>

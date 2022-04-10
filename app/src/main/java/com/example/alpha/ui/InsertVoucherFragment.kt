@@ -1,39 +1,38 @@
 package com.example.alpha.ui
 
 import android.os.Bundle
-import android.util.Log
-import android.view.*
 import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Spinner
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.alpha.R
 import com.example.alpha.data.Category
-import com.example.alpha.data.CategoryViewModel
 import com.example.alpha.data.Count
-import com.example.alpha.databinding.FragmentInsertCategoryBinding
+import com.example.alpha.data.Voucher
+import com.example.alpha.data.VoucherViewModel
+import com.example.alpha.databinding.FragmentInsertVoucherBinding
 import com.example.alpha.util.errorDialog
 import com.example.alpha.util.successDialog
 
+class InsertVoucherFragment : Fragment() {
 
-
-class InsertCategoryFragment : Fragment() {
-
-    private lateinit var binding: FragmentInsertCategoryBinding
+    private lateinit var binding: FragmentInsertVoucherBinding
     private val nav by lazy { findNavController() }
-    private val vm: CategoryViewModel by activityViewModels()
+    private val vm: VoucherViewModel by activityViewModels()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
-        binding = FragmentInsertCategoryBinding.inflate(inflater,container,false)
-
+        binding = FragmentInsertVoucherBinding.inflate(inflater,container,false)
 
         val spinner: Spinner = binding.spnStatus
 
         ArrayAdapter.createFromResource(
             requireContext(),
-            R.array.cat_Status,
+            R.array.voucher_Status,
             android.R.layout.simple_spinner_item
         ).also { adapter ->
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -55,40 +54,48 @@ class InsertCategoryFragment : Fragment() {
 
     private fun reset() {
         binding.edtName.text.clear()
+        binding.edtCode.text.clear()
+        binding.edtValue.text.clear()
         binding.spnStatus.setSelection(0)
-
         binding.edtName.requestFocus()
     }
 
     private fun submit() {
-        val c = vm.getCount("CountCategory")
+        val c = vm.getCount("CountVoucher")
         var count = c?.count.toString().toIntOrNull()?:0
-        count += 1000 + 1
+        count += 3000 + 1
 
-        var setCount = count - 1000
+        var setCount = count - 3000
         var f = Count(
-            docId = "CountCategory",
+            docId = "CountVoucher",
             count = setCount
         )
 
 
-        val cat = Category(
+        var select =0
+        when (binding.spnStatus.selectedItem) {
+            "Valid" -> select = 1
+            "Invalid" -> select = 0
+            else -> -1
+        }
+
+        val v = Voucher(
             docId = count.toString(),
-            name = binding.edtName.text.toString().uppercase().trim(),
-            status = binding.spnStatus.selectedItem.toString(),
+            name = binding.edtName.text.toString().trim(),
+            code = binding.edtCode.text.toString().trim(),
+            value = binding.edtValue.text.toString().toDoubleOrNull()?:0.0,
+            status = select,
         )
 
-        val err = vm.validate(cat)
+        val err = vm.validate(v)
         if(err != ""){
             errorDialog(err)
             return
         }
-        vm.set(cat)
+        vm.set(v)
         vm.setCount(f)
-        successDialog("Record added successfully")
+        successDialog("Voucher added successfully")
         nav.navigateUp()
-
     }
-
 
 }

@@ -5,7 +5,7 @@
             android:id="@+id/shopCategoryFragment"
             android:title="List" />
         <item
-            android:id="@+id/insertFragment"
+            android:id="@+id/insertCategoryFragment"
             android:title="Insert" />
     </group>
 </menu>

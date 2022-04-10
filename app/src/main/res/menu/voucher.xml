@@ -2,10 +2,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:id="@+id/shopFood" >
         <item
-            android:id="@+id/shopCategoryFragment"
-            android:title="Shop Category" />
-        <item
             android:id="@+id/voucherFragment"
-            android:title="Voucher" />
+            android:title="Voucher List" />
+        <item
+            android:id="@+id/insertVoucherFragment"
+            android:title="Insert" />
     </group>
 </menu>

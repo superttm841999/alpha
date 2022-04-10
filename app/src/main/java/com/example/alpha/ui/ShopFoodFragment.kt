@@ -28,7 +28,7 @@ class ShopFoodFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId){
             R.id.shopCategoryFragment -> nav.navigate(R.id.shopCategoryFragment)
-            R.id.about2Fragment -> nav.navigate(R.id.about2Fragment)
+            R.id.voucherFragment -> nav.navigate(R.id.voucherFragment)
         }
 
         return super.onOptionsItemSelected(item)

@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.example.alpha.R
 import com.example.alpha.data.CategoryViewModel
+import com.example.alpha.data.VoucherViewModel
 import com.google.firebase.firestore.Blob
 import java.io.ByteArrayOutputStream
 
@@ -35,6 +36,24 @@ fun Fragment.successDialog(text: String) {
 
 fun Fragment.deleteAllCategoryDialog(deleteId: String){
     val vm: CategoryViewModel by activityViewModels()
+    var builder = AlertDialog.Builder(context)
+    builder.setTitle("Delete confirmation")
+    builder.setMessage("Are you sure to delete?")
+    builder.setIcon(R.drawable.ic_delete)
+    builder.setPositiveButton("Yes", DialogInterface.OnClickListener{ dialog, id->
+        vm.delete(deleteId)
+        dialog.cancel()
+    })
+    builder.setNegativeButton("No", DialogInterface.OnClickListener{ dialog, id->
+        dialog.cancel()
+    })
+
+    var alert = builder.create()
+    alert.show()
+}
+
+fun Fragment.deleteAllVoucherDialog(deleteId: String){
+    val vm: VoucherViewModel by activityViewModels()
     var builder = AlertDialog.Builder(context)
     builder.setTitle("Delete confirmation")
     builder.setMessage("Are you sure to delete?")

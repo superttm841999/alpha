@@ -34,4 +34,29 @@
         android:name="com.example.alpha.ui.UpdateCategoryFragment"
         android:label="Update"
         tools:layout="@layout/fragment_update_category" />
+    <fragment
+        android:id="@+id/approvalListFragment"
+        android:name="com.example.alpha.ui.ApprovalListFragment"
+        android:label="Approval List"
+        tools:layout="@layout/fragment_approval_list" />
+    <fragment
+        android:id="@+id/sellerApprovalFragment"
+        android:name="com.example.alpha.ui.SellerApprovalFragment"
+        android:label="Seller Approval"
+        tools:layout="@layout/fragment_seller_approval" />
+    <fragment
+        android:id="@+id/voucherFragment"
+        android:name="com.example.alpha.ui.VoucherFragment"
+        android:label="Voucher List"
+        tools:layout="@layout/fragment_voucher" />
+    <fragment
+        android:id="@+id/insertVoucherFragment"
+        android:name="com.example.alpha.ui.InsertVoucherFragment"
+        android:label="Insert Voucher"
+        tools:layout="@layout/fragment_insert_voucher" />
+    <fragment
+        android:id="@+id/updateVoucherFragment"
+        android:name="com.example.alpha.UpdateVoucherFragment"
+        android:label="fragment_update_voucher"
+        tools:layout="@layout/fragment_update_voucher" />
 </navigation>
