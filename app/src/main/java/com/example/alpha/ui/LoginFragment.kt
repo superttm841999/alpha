@@ -13,6 +13,7 @@ import androidx.core.widget.addTextChangedListener
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import com.example.alpha.MainActivity
 import com.example.alpha.R
 import com.example.alpha.databinding.FragmentLoginBinding
 import com.example.alpha.util.*
@@ -183,12 +184,11 @@ class LoginFragment : Fragment() {
 
     private fun routeActivity(value: User){
 //        role
-//
 //        0 - customer
 //        1 - seller
 //        2 - admin
 //        3 -manager
-        if(value.role == 2){
+        if(value.role == 0){
             var intent = Intent(activity, MainActivity::class.java).apply{
                 putExtra("USER_INFO", value)
             }
