@@ -1,6 +1,7 @@
 package com.example.alpha.ui
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -20,9 +21,10 @@ class ApprovalListFragment : Fragment() {
     private val nav by lazy { findNavController() }
     private val vm: SellerViewModel by activityViewModels()
     private lateinit var adapter: SellerAdapter
+    private val model: LoginViewModel by activityViewModels()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-
+        Log.d("lolsell", model.user.value.toString())
         binding = FragmentApprovalListBinding.inflate(inflater,container,false)
 
         adapter = SellerAdapter() { holder, form ->

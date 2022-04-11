@@ -11,8 +11,9 @@ import androidx.navigation.ui.NavigationUI.setupActionBarWithNavController
 import androidx.navigation.ui.onNavDestinationSelected
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.alpha.databinding.ActivityMainBinding
+import com.example.alpha.util.BaseActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
     private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
     private val nav by lazy { supportFragmentManager.findFragmentById(R.id.host)!!.findNavController() }
