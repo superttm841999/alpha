@@ -19,7 +19,8 @@ class HomeFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
-        Log.d("lol", model.user.value.toString())
+//        Log.d("lol", model.user.value.toString())
+        binding.txtHome.text = "Welcome Back, " + model.user.value?.name
         return binding.root
     }
 

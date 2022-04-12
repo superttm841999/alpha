@@ -83,7 +83,7 @@ class InsertVoucherFragment : Fragment() {
             docId = count.toString(),
             name = binding.edtName.text.toString().trim(),
             code = binding.edtCode.text.toString().trim(),
-            value = binding.edtValue.text.toString().toDoubleOrNull()?:0.0,
+            value = binding.edtValue.text.toString().toIntOrNull()?:0,
             status = select,
         )
 

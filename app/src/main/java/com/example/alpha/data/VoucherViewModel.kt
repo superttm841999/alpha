@@ -89,7 +89,7 @@ class VoucherViewModel : ViewModel() {
 
 
 
-        e += if (f.value == 0.0) "- Value is required.\n"
+        e += if (f.value == 0) "- Value is required.\n"
         else ""
 
 

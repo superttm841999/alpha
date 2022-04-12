@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_begin="116dp" />
+        app:layout_constraintGuide_begin="136dp" />
 
     <TextView
         android:id="@+id/txtName"
@@ -84,7 +84,7 @@
         android:text="Reset"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toBottomOf="@+id/txtAddress" />
+        app:layout_constraintTop_toBottomOf="@+id/txtApprovalUsername" />
 
     <Button
         android:id="@+id/btnSubmit"
@@ -105,7 +105,7 @@
         android:labelFor="@id/txtName"
         android:text="Name:"
         android:textColor="@color/black"
-        android:textSize="24sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/txtName"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="@+id/txtName" />
@@ -115,9 +115,9 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:labelFor="@id/txtUsername"
-        android:text="User:"
+        android:text="Seller User:"
         android:textColor="@color/black"
-        android:textSize="24sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/txtUsername"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="@+id/txtUsername"
@@ -130,7 +130,7 @@
         android:labelFor="@id/imgPhoto"
         android:text="Logo:"
         android:textColor="@color/black"
-        android:textSize="24sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/imgPhoto"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="@+id/imgPhoto"
@@ -155,7 +155,7 @@
         android:layout_marginEnd="16dp"
         android:text="Status:"
         android:textColor="#000000"
-        android:textSize="24sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="@+id/spnStatus" />
 
@@ -165,7 +165,7 @@
         android:layout_marginEnd="16dp"
         android:text="Address:"
         android:textColor="@color/black"
-        android:textSize="24sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/txtAddress"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="@+id/txtAddress" />
@@ -198,7 +198,7 @@
         android:layout_marginEnd="16dp"
         android:text="Type:"
         android:textColor="@color/black"
-        android:textSize="24sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/txtCategoryUpdateStatus"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintTop_toTopOf="@+id/txtCategoryUpdateStatus" />
@@ -221,5 +221,36 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline"
         app:layout_constraintTop_toBottomOf="@+id/imgPhoto" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:inputType="textLongMessage|textMultiLine"
+        android:text="Approval Username:"
+        android:textAlignment="textEnd"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/txtApprovalUsername"
+        app:layout_constraintEnd_toStartOf="@+id/guideline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txtApprovalUsername" />
+
+    <TextView
+        android:id="@+id/txtApprovalUsername"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:background="#DDDBDB"
+        android:fontFamily="@font/delius"
+        android:text="XXX"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline"
+        app:layout_constraintTop_toBottomOf="@+id/txtAddress" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

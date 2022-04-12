@@ -22,7 +22,7 @@ class SellerApprovalFragment : Fragment() {
     private lateinit var binding: FragmentSellerApprovalBinding
     private val nav by lazy { findNavController() }
     private val vm: SellerViewModel by activityViewModels()
-
+    private val model: LoginViewModel by activityViewModels()
     private val id by lazy { requireArguments().getString("id") ?: "" }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -62,6 +62,7 @@ class SellerApprovalFragment : Fragment() {
         binding.txtCategoryUpdateStatus.text = f.category
         binding.imgPhoto.setImageBitmap(f.logo.toBitmap())
         binding.txtAddress.text = f.address
+        binding.txtApprovalUsername.text = f.approvalUser
         binding.spnStatus.requestFocus()
         setStatus(f.status)
     }
@@ -89,7 +90,10 @@ class SellerApprovalFragment : Fragment() {
             category = binding.txtCategoryUpdateStatus.text.toString(),
             logo = binding.imgPhoto.cropToBlob(300,300),
             address = binding.txtAddress.text.toString(),
-            status = select
+            status = select,
+            approvalUser = model.user.value!!.username,
+            approvalEmail = model.user.value!!.email,
+            approvalName = model.user.value!!.name,
         )
 
         vm.set(f)

@@ -188,7 +188,7 @@ class LoginFragment : Fragment() {
 //        1 - seller
 //        2 - admin
 //        3 -manager
-        if(value.role == 0){
+        if(value.role == 2){
             var intent = Intent(activity, MainActivity::class.java).apply{
                 putExtra("USER_INFO", value)
             }

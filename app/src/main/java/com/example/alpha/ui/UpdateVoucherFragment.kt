@@ -85,7 +85,7 @@ class UpdateVoucherFragment : Fragment() {
             name = binding.edtName.text.toString().trim(),
             status = select,
             code = binding.edtCode.text.toString().trim(),
-            value = binding.edtValue.text.toString().toDoubleOrNull()?:0.0,
+            value = binding.edtValue.text.toString().toIntOrNull()?:0,
         )
 
         val err = vm.validate(f,false)
