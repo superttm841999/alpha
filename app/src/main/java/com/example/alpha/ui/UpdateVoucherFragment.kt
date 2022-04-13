@@ -60,6 +60,8 @@ class UpdateVoucherFragment : Fragment() {
         binding.edtName.setText(f.name)
         binding.edtCode.setText(f.code)
         binding.edtValue.setText(f.value.toString())
+        binding.edtStartDate.setText(f.startDate.toString())
+        binding.edtEndDate.setText(f.endDate.toString())
         setStatus(f.status)
 
         binding.edtName.requestFocus()
@@ -86,6 +88,8 @@ class UpdateVoucherFragment : Fragment() {
             status = select,
             code = binding.edtCode.text.toString().trim(),
             value = binding.edtValue.text.toString().toIntOrNull()?:0,
+            startDate = binding.edtStartDate.text.toString().trim(),
+            endDate = binding.edtEndDate.text.toString().trim(),
         )
 
         val err = vm.validate(f,false)

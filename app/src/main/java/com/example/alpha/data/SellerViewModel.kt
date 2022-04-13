@@ -13,20 +13,11 @@ import kotlinx.coroutines.tasks.await
 class SellerViewModel : ViewModel() {
     private val col = Firebase.firestore.collection("Seller")
     private val forms = MutableLiveData<List<Seller>>()
-    private val countCol = Firebase.firestore.collection("Count")
-    private val counts = MutableLiveData<List<Count>>()
 
     init {
         col.addSnapshotListener { snap, _ -> forms.value = snap?.toObjects() }
     }
 
-    init {
-        countCol.addSnapshotListener { snap, _ -> counts.value = snap?.toObjects() }
-        viewModelScope.launch {
-            val counts = countCol.get().await().toObjects<Count>()
-            countCol
-        }
-    }
 
     fun get(docId: String): Seller? {
         return forms.value?.find{ f -> f.docId == docId }
@@ -54,15 +45,6 @@ class SellerViewModel : ViewModel() {
         return forms.value?.any{ f -> f.name == name} ?: false
     }
 
-    //Read COUNT
-    fun getCount(docId: String): Count? {
-        return counts.value?.find{ f -> f.docId == docId }
-    }
-
-    //Update COUNT
-    fun setCount(f: Count) {
-        countCol.document(f.docId).set(f)
-    }
 
     fun validate(f: Seller, insert: Boolean = true): String {
         val regexId = Regex("""^[0-9A-Z]{4}$""")
@@ -72,6 +54,7 @@ class SellerViewModel : ViewModel() {
             e += if (f.docId == "") "- Id is required.\n"
             //else if (!f.id.matches(regexId)) "- Id format is invalid.\n"
             else if (idExists(f.docId)) "- Id is duplicated.\n"
+            //else if (f.docId == "1001") "- Please submit again if only Id got problem.\n"
             else ""
         }
 

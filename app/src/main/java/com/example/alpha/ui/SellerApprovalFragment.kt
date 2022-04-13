@@ -16,6 +16,8 @@ import com.example.alpha.databinding.FragmentSellerApprovalBinding
 import com.example.alpha.util.cropToBlob
 import com.example.alpha.util.successDialog
 import com.example.alpha.util.toBitmap
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class SellerApprovalFragment : Fragment() {
 
@@ -24,6 +26,7 @@ class SellerApprovalFragment : Fragment() {
     private val vm: SellerViewModel by activityViewModels()
     private val model: LoginViewModel by activityViewModels()
     private val id by lazy { requireArguments().getString("id") ?: "" }
+    private var getUserId : String = ""
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
@@ -64,6 +67,8 @@ class SellerApprovalFragment : Fragment() {
         binding.txtAddress.text = f.address
         binding.txtApprovalUsername.text = f.approvalUser
         binding.spnStatus.requestFocus()
+        getUserId = f.userId
+
         setStatus(f.status)
     }
 
@@ -86,7 +91,7 @@ class SellerApprovalFragment : Fragment() {
         val f = Seller(
             docId = id,
             name = binding.txtName.text.toString().trim(),
-            username = binding.txtUsername.text.toString(),
+            username = binding.txtUsername.text.toString(), //endaotong //
             category = binding.txtCategoryUpdateStatus.text.toString(),
             logo = binding.imgPhoto.cropToBlob(300,300),
             address = binding.txtAddress.text.toString(),
@@ -94,9 +99,18 @@ class SellerApprovalFragment : Fragment() {
             approvalUser = model.user.value!!.username,
             approvalEmail = model.user.value!!.email,
             approvalName = model.user.value!!.name,
+            userId = getUserId
         )
 
         vm.set(f)
+
+
+        var user = mutableMapOf<String, Any>(
+            "role" to 1
+        )
+
+       Firebase.firestore.collection("Users").document(getUserId).update(user)
+
         successDialog("Update the status successfully")
         nav.navigateUp()
     }

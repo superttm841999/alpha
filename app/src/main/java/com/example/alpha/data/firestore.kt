@@ -24,6 +24,8 @@ data class Voucher(
     var value : Int = 0,
     //Invalid -0  Valid -1
     var status : Int = 0,
+    var startDate : String = "",
+    var endDate : String = "",
 )
 
 data class Count(
@@ -38,6 +40,7 @@ data class Seller(
     var name : String = "",
     var date : Date = Date(),
     var logo : Blob = Blob.fromBytes(ByteArray(0)),
+    var userId : String = "",
     var username : String = "",
     var address : String = "",
     //pending -0  approve -1  reject -2
@@ -66,6 +69,7 @@ data class Food(
     @get:Exclude
     var application: Seller = Seller()
 }
+
 
 val APPLICATION_FORM = Firebase.firestore.collection("Seller")
 val FOODS = Firebase.firestore.collection("Food")

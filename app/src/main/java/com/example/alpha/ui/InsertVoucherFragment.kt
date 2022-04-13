@@ -10,13 +10,13 @@ import android.widget.Spinner
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.alpha.R
-import com.example.alpha.data.Category
 import com.example.alpha.data.Count
 import com.example.alpha.data.Voucher
 import com.example.alpha.data.VoucherViewModel
 import com.example.alpha.databinding.FragmentInsertVoucherBinding
 import com.example.alpha.util.errorDialog
 import com.example.alpha.util.successDialog
+import kotlinx.coroutines.runBlocking
 
 class InsertVoucherFragment : Fragment() {
 
@@ -44,7 +44,7 @@ class InsertVoucherFragment : Fragment() {
         binding.edtName.requestFocus()
 
         binding.btnSubmit.setOnClickListener {
-            submit()
+           runBlocking { submit() }
         }
 
         binding.btnReset.setOnClickListener{ reset() }
@@ -60,16 +60,19 @@ class InsertVoucherFragment : Fragment() {
         binding.edtName.requestFocus()
     }
 
-    private fun submit() {
-        val c = vm.getCount("CountVoucher")
-        var count = c?.count.toString().toIntOrNull()?:0
-        count += 3000 + 1
+    private suspend fun submit() {
 
-        var setCount = count - 3000
-        var f = Count(
-            docId = "CountVoucher",
-            count = setCount
-        )
+        val c = vm.getCount("CountVoucher")
+        var count = c?.toInt()
+        count = count?.plus(3000 + 1)
+
+        var setCount = count?.minus(3000)
+        var f = setCount?.let {
+            Count(
+                docId = "CountVoucher",
+                count = it
+            )
+        }
 
 
         var select =0
@@ -85,6 +88,8 @@ class InsertVoucherFragment : Fragment() {
             code = binding.edtCode.text.toString().trim(),
             value = binding.edtValue.text.toString().toIntOrNull()?:0,
             status = select,
+            startDate = binding.edtStartDate.text.toString().trim(),
+            endDate = binding.edtEndDate.text.toString().trim(),
         )
 
         val err = vm.validate(v)
@@ -93,7 +98,9 @@ class InsertVoucherFragment : Fragment() {
             return
         }
         vm.set(v)
-        vm.setCount(f)
+        if (f != null) {
+            vm.setCount(f)
+        }
         successDialog("Voucher added successfully")
         nav.navigateUp()
     }

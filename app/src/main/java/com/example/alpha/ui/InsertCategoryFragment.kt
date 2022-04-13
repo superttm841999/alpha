@@ -15,7 +15,7 @@ import com.example.alpha.data.Count
 import com.example.alpha.databinding.FragmentInsertCategoryBinding
 import com.example.alpha.util.errorDialog
 import com.example.alpha.util.successDialog
-
+import kotlinx.coroutines.runBlocking
 
 
 class InsertCategoryFragment : Fragment() {
@@ -45,7 +45,7 @@ class InsertCategoryFragment : Fragment() {
         binding.edtName.requestFocus()
 
         binding.btnSubmit.setOnClickListener {
-            submit()
+           runBlocking { submit() }
         }
 
         binding.btnReset.setOnClickListener{ reset() }
@@ -60,16 +60,18 @@ class InsertCategoryFragment : Fragment() {
         binding.edtName.requestFocus()
     }
 
-    private fun submit() {
+    private suspend fun submit() {
         val c = vm.getCount("CountCategory")
-        var count = c?.count.toString().toIntOrNull()?:0
-        count += 1000 + 1
+        var count = c?.toInt()
+        count = count?.plus(1000 + 1)
 
-        var setCount = count - 1000
-        var f = Count(
-            docId = "CountCategory",
-            count = setCount
-        )
+        var setCount = count?.minus(1000)
+        var f = setCount?.let {
+            Count(
+                docId = "CountCategory",
+                count = it
+            )
+        }
 
 
         val cat = Category(
@@ -84,7 +86,9 @@ class InsertCategoryFragment : Fragment() {
             return
         }
         vm.set(cat)
-        vm.setCount(f)
+        if (f != null) {
+            vm.setCount(f)
+        }
         successDialog("Record added successfully")
         nav.navigateUp()
 

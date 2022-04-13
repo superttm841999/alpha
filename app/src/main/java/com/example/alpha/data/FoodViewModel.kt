@@ -39,8 +39,9 @@ class FoodViewModel : ViewModel() {
     }
 
     //Read COUNT
-    fun getCount(docId: String): Count? {
-        return counts.value?.find{ f -> f.docId == docId }
+    suspend fun getCount(docId: String): Int? {
+        val result = countCol.document(docId).get().await()
+        return result.data?.get("count").toString().toIntOrNull()
     }
 
     //Update COUNT
@@ -63,6 +64,7 @@ class FoodViewModel : ViewModel() {
         if (insert) {
             e += if (f.id == "") "- Id is required.\n"
             else if (idExists(f.id)) "- Id is duplicated.\n"
+           // else if (f.id == "5001") "- Please submit again if only Id got problem.\n"
             else ""
 
             e += if (f.name == "") "- Name is required.\n"

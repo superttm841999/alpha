@@ -79,7 +79,7 @@ class InsertFoodFragment : Fragment() {
         reset()
         binding.imgPhoto.setOnClickListener { select() }
         binding.btnReset.setOnClickListener { reset() }
-        binding.btnSubmit.setOnClickListener { submit() }
+        binding.btnSubmit.setOnClickListener { runBlocking { submit() } }
 
         return binding.root
     }
@@ -101,16 +101,18 @@ class InsertFoodFragment : Fragment() {
         binding.edtName.requestFocus()
     }
 
-    private fun submit(){
+    private suspend fun submit(){
         val c = vm.getCount("CountFood")
-        var count = c?.count.toString().toIntOrNull()?:0
-        count += 5000 + 1
+        var count = c?.toInt()
+        count = count?.plus(5000 + 1)
 
-        var setCount = count - 5000
-        var cc = Count(
-            docId = "CountFood",
-            count = setCount
-        )
+        var setCount = count?.minus(5000)
+        var cc = setCount?.let {
+            Count(
+                docId = "CountFood",
+                count = it
+            )
+        }
 
         val f = Food(
             id = count.toString(),
@@ -129,7 +131,9 @@ class InsertFoodFragment : Fragment() {
         }
 
         vm.set(f)
-        vm.setCount(cc)
+        if (cc != null) {
+            vm.setCount(cc)
+        }
         successDialog("Food added successfully")
         nav.navigateUp()
 
