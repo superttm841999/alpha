@@ -70,6 +70,45 @@ data class Food(
     var application: Seller = Seller()
 }
 
+data class OrderFood(
+    @DocumentId
+    var docId : String = "",
+    var orderId : String = "",
+    var foodId : String = "",
+    var quantity : Int = 0,
+){
+    @get:Exclude
+    var order: Order = Order()
+    @get:Exclude
+    var application: Seller = Seller()
+    @get:Exclude
+    var count: Int = 0
+}
+
+data class Order(
+    @DocumentId
+    var docId : String = "",
+    var payment : Double =  0.00,
+    // //Pending -0  Accepted -1  Rejected -2
+    var status : Int = 0,
+    var userId : String = "",
+    var sellerId : String = "",
+    var deliveryFee : Int = 0,
+    var subTotal : Double = 0.00,
+    var tax : Int = 0,
+    var voucherName : String = "",
+    var voucherValue : Int = 0,
+    //Pending-0 In Progress-1  Done -2
+    var progress : Int = 0
+){
+    @get:Exclude
+    var count: Int = 0
+    @get:Exclude
+    var application: Seller = Seller()
+}
+
 
 val APPLICATION_FORM = Firebase.firestore.collection("Seller")
 val FOODS = Firebase.firestore.collection("Food")
+val ORDERS = Firebase.firestore.collection("Order")
+val ORDER_FOODS = Firebase.firestore.collection("OrderFood")

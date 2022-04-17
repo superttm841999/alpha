@@ -1,5 +1,6 @@
 package com.example.alpha.util
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -41,12 +42,22 @@ class SellerAdapter (
         holder.txtUsername.text   = form.username
         holder.txtShopName.text = form.name
 
-        when(form.status){
-            0 -> holder.txtStatusForm.text  = "pending"
-            1 -> holder.txtStatusForm.text  = "approved"
-            2 -> holder.txtStatusForm.text  = "rejected"
-            else -> holder.txtStatusForm.text  = "???"
+        var status = when(form.status){
+            0 ->  "审核中"
+            1 ->  "已批准"
+            2 ->  "已拒绝"
+            else ->  "???"
         }
+
+        holder.txtStatusForm.text  = status
+
+        when(form.status){
+            0 -> holder.txtStatusForm.setTextColor(Color.parseColor("#ADD8E6"))
+            1 -> holder.txtStatusForm.setTextColor(Color.parseColor("#00FF00"))
+            2 -> holder.txtStatusForm.setTextColor(Color.parseColor("#FF0000"))
+            else -> ""
+        }
+
 
         holder.imgLogo.setImageBitmap(form.logo.toBitmap())
 

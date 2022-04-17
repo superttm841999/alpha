@@ -11,19 +11,19 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.alpha.R
 import com.example.alpha.data.Seller
 
-class ShopListAdapter (
+class ShopOrderAdapter (
     val fn: (ViewHolder, Seller) -> Unit = { _, _ -> }
-) : ListAdapter<Seller, ShopListAdapter.ViewHolder>(DiffCallback) {
+) : ListAdapter<Seller, ShopOrderAdapter.ViewHolder>(DiffCallback) {
 
     companion object DiffCallback : DiffUtil.ItemCallback<Seller>() {
-        override fun areItemsTheSame(a: Seller, b: Seller)    = a.docId == b.docId
+        override fun areItemsTheSame(a: Seller, b: Seller) = a.docId == b.docId
         override fun areContentsTheSame(a: Seller, b: Seller) = a == b
     }
 
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val root = view
-        val imgLogo : ImageView = view.findViewById(R.id.imgItemShop)
-        val txtName : TextView = view.findViewById(R.id.txtItemShopName)
+        val imgLogo: ImageView = view.findViewById(R.id.imgItemShop)
+        val txtName: TextView = view.findViewById(R.id.txtItemShopName)
         val txtCount: TextView = view.findViewById(R.id.txtItemShopCount)
     }
 
@@ -37,14 +37,13 @@ class ShopListAdapter (
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val application = getItem(position)
 
-        if(application.status == 1){
+        if (application.status == 1) {
 
             holder.imgLogo.setImageBitmap(application.logo.toBitmap())
-            holder.txtName.text  = application.name
+            holder.txtName.text = application.name
 
-            holder.txtCount.text = "${application.count} Food(s) "
+            holder.txtCount.text = "${application.count} 条订单 "
             fn(holder, application)
         }
     }
-
 }

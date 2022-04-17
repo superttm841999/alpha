@@ -1,0 +1,80 @@
+package com.example.alpha.util
+
+import android.graphics.Color
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
+import androidx.recyclerview.widget.RecyclerView
+import com.example.alpha.R
+import com.example.alpha.data.Order
+import com.example.alpha.data.Seller
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.firestore.ktx.toObjects
+import com.google.firebase.ktx.Firebase
+import java.text.DecimalFormat
+
+class OrderListAdapter (
+    val fn: (ViewHolder, Order) -> Unit = { _, _ -> }
+) : ListAdapter<Order, OrderListAdapter.ViewHolder>(DiffCallback) {
+
+    private val formatter = DecimalFormat("0.00")
+
+    companion object DiffCallback : DiffUtil.ItemCallback<Order>() {
+        override fun areItemsTheSame(a: Order, b: Order)    = a.docId == b.docId
+        override fun areContentsTheSame(a: Order, b: Order) = a == b
+    }
+
+    class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
+        val root = view
+        val txtOrderId : TextView = (view.findViewById(R.id.txtOrderId))
+        val txtStatus : TextView = (view.findViewById(R.id.txtStatus))
+        val imgLogo : ImageView = view.findViewById(R.id.imgItemShop)
+        val txtName : TextView = view.findViewById(R.id.txtItemShopName)
+        val txtTotal: TextView = view.findViewById(R.id.txtPrice)
+        val txtCount: TextView = view.findViewById(R.id.txtCount)
+    }
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val view = LayoutInflater
+            .from(parent.context)
+            .inflate(R.layout.item_order_history_list, parent, false)
+        return ViewHolder(view)
+    }
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val order = getItem(position)
+
+
+        Firebase.firestore.collection("Seller").get().addOnSuccessListener {
+                snap ->
+            val list = snap.toObjects<Seller>()
+            list.forEach { l ->
+                if(l.docId == order.sellerId){
+                        holder.imgLogo.setImageBitmap(l.logo.toBitmap())
+                        holder.txtName.text  = l.name
+                        var status = when(order.status){
+                            0 ->  "进行中"
+                            1 ->  "已接受"
+                            2 ->  "已拒绝"
+                            else ->  "啥玩意"
+                        }
+                        holder.txtStatus.text  = status
+                        when(order.status){
+                            0 -> holder.txtStatus.setTextColor(Color.parseColor("#ADD8E6"))
+                            1 -> holder.txtStatus.setTextColor(Color.parseColor("#00FF00"))
+                            2 -> holder.txtStatus.setTextColor(Color.parseColor("#FF0000"))
+                            else -> ""
+                        }
+                        holder.txtOrderId.text  = "产品ID # ${order.docId}"
+                        holder.txtTotal.text  = "RM ${formatter.format(order.payment)}"
+                        holder.txtCount.text = "- ${order.count} 产品"
+                        fn(holder, order)
+                }
+            }
+        }
+    }
+}
