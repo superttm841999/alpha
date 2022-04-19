@@ -7,5 +7,14 @@
         <item
             android:id="@+id/approvalListFragment"
             android:title="Approval List" />
+
+        <item
+            android:id="@+id/accountProfileFragment"
+            android:title="Profile" />
+
+        <item
+            android:id="@+id/accountChangePasswordFragment"
+            android:title="Change Password" />
+
     </group>
 </menu>

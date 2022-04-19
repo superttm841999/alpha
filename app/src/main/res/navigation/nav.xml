@@ -94,4 +94,24 @@
         android:name="com.example.alpha.ui.OrderDetailFragment"
         android:label="订单详细资料"
         tools:layout="@layout/fragment_order_detail" />
+    <fragment
+        android:id="@+id/accountProfileFragment"
+        android:name="com.example.alpha.ui.AccountProfileFragment"
+        android:label="fragment_account_profile"
+        tools:layout="@layout/fragment_account_profile" />
+    <fragment
+        android:id="@+id/accountChangePasswordFragment"
+        android:name="com.example.alpha.ui.AccountChangePasswordFragment"
+        android:label="fragment_account_change_password"
+        tools:layout="@layout/fragment_account_change_password" />
+    <fragment
+        android:id="@+id/accountListFragment"
+        android:name="com.example.alpha.ui.AccountListFragment"
+        android:label="Account List"
+        tools:layout="@layout/fragment_account_list" />
+    <fragment
+        android:id="@+id/accountListEditFragment"
+        android:name="com.example.alpha.ui.AccountListEditFragment"
+        android:label="fragment_account_list_edit"
+        tools:layout="@layout/fragment_account_list_edit" />
 </navigation>

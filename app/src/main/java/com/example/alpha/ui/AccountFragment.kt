@@ -29,6 +29,8 @@ class AccountFragment : Fragment() {
         when (item.itemId){
             R.id.accountListFragment -> nav.navigate(R.id.accountListFragment)
             R.id.approvalListFragment -> nav.navigate(R.id.approvalListFragment)
+            R.id.accountProfileFragment -> nav.navigate(R.id.accountProfileFragment)
+            R.id.accountChangePasswordFragment -> nav.navigate(R.id.accountChangePasswordFragment)
         }
 
         return super.onOptionsItemSelected(item)

@@ -8,15 +8,23 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.example.alpha.ui.LoginFragment"
-        android:label="fragment_login"
+        android:label="Food Ordering System"
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_loginFragment_to_registerFragment"
             app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_forgotPasswordFragment"
+            app:destination="@id/forgotPasswordFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.example.alpha.ui.RegisterFragment"
-        android:label="fragment_register"
+        android:label="Sign Up A New Account"
         tools:layout="@layout/fragment_register" />
+    <fragment
+        android:id="@+id/forgotPasswordFragment"
+        android:name="com.example.alpha.ui.ForgotPasswordFragment"
+        android:label="Forgot Password"
+        tools:layout="@layout/fragment_forgot_password" />
 </navigation>

@@ -1,5 +1,6 @@
 package com.example.alpha
 
+import android.content.Intent
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -12,6 +13,7 @@ import androidx.navigation.ui.onNavDestinationSelected
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.alpha.databinding.ActivityMainBinding
 import com.example.alpha.util.BaseActivity
+import com.example.alpha.util.rmUserSR
 
 class MainActivity : BaseActivity() {
 
@@ -42,6 +44,14 @@ class MainActivity : BaseActivity() {
         // TODO: Only handle main menu group and home
         if(item.groupId != R.id.main && item.itemId != R.id.homeFragment) return false
 
+        when (item.itemId){
+            R.id.logoutFragment -> {
+                rmUserSR(this)
+                var intent = Intent(this, LoginActivity::class.java)
+                startActivity(intent)
+                this.finish()
+            }
+        }
         //clear backstack
         return item.onNavDestinationSelected(nav) || super.onOptionsItemSelected(item)
     }
