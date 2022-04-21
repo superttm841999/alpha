@@ -27,6 +27,8 @@ class SellerApprovalFragment : Fragment() {
     private val model: LoginViewModel by activityViewModels()
     private val id by lazy { requireArguments().getString("id") ?: "" }
     private var getUserId : String = ""
+    private var open : String = ""
+    private var close : String = ""
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
@@ -68,6 +70,8 @@ class SellerApprovalFragment : Fragment() {
         binding.txtApprovalUsername.text = f.approvalUser
         binding.spnStatus.requestFocus()
         getUserId = f.userId
+        open = f.open
+        close = f.close
 
         setStatus(f.status)
     }
@@ -99,7 +103,9 @@ class SellerApprovalFragment : Fragment() {
             approvalUser = model.user.value!!.username,
             approvalEmail = model.user.value!!.email,
             approvalName = model.user.value!!.name,
-            userId = getUserId
+            userId = getUserId,
+            open = open,
+            close = close,
         )
 
         vm.set(f)
