@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/delivery_man_nav"
+    app:startDestination="@id/takeOrderListFragment2">
+
+    <fragment
+        android:id="@+id/takeOrderListFragment2"
+        android:name="com.example.alpha.deliveryman.TakeOrderListFragment"
+        android:label="fragment_take_order_list"
+        tools:layout="@layout/fragment_take_order_list" />
+    <fragment
+        android:id="@+id/dmMeFragment2"
+        android:name="com.example.alpha.deliveryman.DmMeFragment"
+        android:label="fragment_dm_me"
+        tools:layout="@layout/fragment_dm_me" />
+    <fragment
+        android:id="@+id/PUItemDetailFragment"
+        android:name="com.example.alpha.deliveryman.PUItemDetailFragment"
+        android:label="fragment_p_u_item_detail"
+        tools:layout="@layout/fragment_p_u_item_detail" />
+</navigation>

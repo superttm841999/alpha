@@ -5,10 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.LoginFragment"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
 
     <com.google.android.material.textfield.TextInputLayout
-        android:layout_centerVertical="true"
+        android:paddingTop="150dp"
         android:id="@+id/usernameTextInputLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         app:endIconMode="clear_text"
@@ -71,14 +72,6 @@
             >
 
             <Button
-                android:id="@+id/registerBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="?android:attr/selectableItemBackground"
-                android:text="Sign Up"
-                android:textColor="@color/black" />
-
-            <Button
                 android:id="@+id/loginBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -110,7 +103,15 @@
             android:text="Forgot Password?"
             android:textColor="@color/Blue" />
 
-
+        <Button
+            android:id="@+id/registerBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:text="Be Our delivery man"
+            android:layout_below="@id/forgotPwdBtn"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/black" />
 
     </RelativeLayout>
 

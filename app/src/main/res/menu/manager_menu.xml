@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/mngStaffFragment"
+        android:title="Staff"
+        android:icon="@drawable/ic_staff_white"/>
+
+    <item
+        android:id="@+id/mngMeFragment"
+        android:title="Me"
+        android:icon="@drawable/ic_me_white" />
+
+</menu>

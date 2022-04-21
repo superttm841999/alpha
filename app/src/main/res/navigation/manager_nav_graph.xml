@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/manager_nav_graph"
+    app:startDestination="@id/mngStaffFragment">
+
+    <fragment
+        android:id="@+id/mngStaffFragment"
+        android:name="com.example.alpha.manager.MngStaffFragment"
+        android:label="Manage Staff"
+        tools:layout="@layout/fragment_mng_staff" >
+        <action
+            android:id="@+id/action_mngStaffFragment_to_mngAddStaffFragment"
+            app:destination="@id/mngAddStaffFragment" />
+        <action
+            android:id="@+id/action_mngStaffFragment_to_editStaffFragment"
+            app:destination="@id/editStaffFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mngMeFragment"
+        android:name="com.example.alpha.manager.MngMeFragment"
+        android:label="Me"
+        tools:layout="@layout/fragment_mng_me" >
+        <action
+            android:id="@+id/action_mngMeFragment_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment" />
+        <action
+            android:id="@+id/action_mngMeFragment_to_profileFragment3"
+            app:destination="@id/profileFragment3" />
+    </fragment>
+    <fragment
+        android:id="@+id/mngAddStaffFragment"
+        android:name="com.example.alpha.manager.MngAddStaffFragment"
+        android:label="Add Staff"
+        tools:layout="@layout/fragment_mng_add_staff" >
+        <action
+            android:id="@+id/action_mngAddStaffFragment_to_mngStaffFragment"
+            app:destination="@id/mngStaffFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/changePasswordFragment"
+        android:name="com.example.alpha.manager.ChangePasswordFragment"
+        android:label="Change Your Password"
+        tools:layout="@layout/fragment_change_password" />
+    <fragment
+        android:id="@+id/profileFragment3"
+        android:name="com.example.alpha.manager.ProfileFragment"
+        android:label="Edit Profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/editStaffFragment"
+        android:name="com.example.alpha.manager.EditStaffFragment"
+        android:label="fragment_edit_staff"
+        tools:layout="@layout/fragment_edit_staff" />
+</navigation>

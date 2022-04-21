@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".ui.RegisterFragment">
+    tools:context=".manager.MngAddStaffFragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,15 +13,6 @@
         android:orientation="vertical"
         android:paddingBottom="100dp"
         >
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sign Up Delivery Man Account"
-            android:padding="10px"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            />
 
         <ImageView
             android:id="@+id/image"
@@ -168,62 +159,10 @@
                 />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_centerVertical="true"
-            android:id="@+id/newPwdTextInputLayout"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            app:endIconMode="password_toggle"
-            app:errorEnabled="true"
-            android:layout_below="@+id/currentPwdTextInputLayout"
-
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="32dp"
-            android:hint="New Password">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/newPwdTextInput"
-                android:inputType="textPassword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:maxLines="1"
-                android:singleLine="true"
-                />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_centerVertical="true"
-            android:id="@+id/cNewPwdTextInputLayout"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            app:endIconMode="password_toggle"
-            app:errorEnabled="true"
-            android:layout_below="@id/newPwdTextInputLayout"
-
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="32dp"
-            android:hint="Confirm Password">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/cNewPwdTextInput"
-                android:inputType="textPassword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:maxLines="1"
-                android:singleLine="true"
-                />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
         <Button
             android:layout_marginTop="10dp"
-            android:id="@+id/signUpBtn"
-            android:text="Sign Up"
+            android:id="@+id/addStaffBtn"
+            android:text="Add Staff"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"/>
 

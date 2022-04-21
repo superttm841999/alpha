@@ -16,6 +16,8 @@ import androidx.navigation.fragment.findNavController
 import com.example.alpha.MainActivity
 import com.example.alpha.R
 import com.example.alpha.databinding.FragmentLoginBinding
+import com.example.alpha.deliveryman.DeliveryManActivity
+import com.example.alpha.manager.ManagerActivity
 import com.example.alpha.util.*
 import com.example.alpha.util.showToast
 import kotlinx.coroutines.*
@@ -194,6 +196,23 @@ class LoginFragment : Fragment() {
 //        3 -manager
         if(value.role == 2){
             var intent = Intent(activity, MainActivity::class.java).apply{
+                putExtra("USER_INFO", value)
+            }
+            startActivity(intent)
+            activity?.finish()
+        }
+
+        if(value.role == 3){
+            var intent = Intent(activity,ManagerActivity::class.java).apply{
+                putExtra("USER_INFO", value)
+            }
+            startActivity(intent)
+            activity?.finish()
+        }
+
+
+        if(value.role == 4){
+            var intent = Intent(activity,DeliveryManActivity::class.java).apply{
                 putExtra("USER_INFO", value)
             }
             startActivity(intent)

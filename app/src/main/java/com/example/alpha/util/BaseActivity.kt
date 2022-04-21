@@ -14,6 +14,8 @@ import com.example.alpha.ui.LoginRepository
 import com.example.alpha.ui.LoginStatus
 import com.example.alpha.ui.LoginViewModel
 import com.example.alpha.ui.User
+import com.example.alpha.user.UserViewModel
+import com.example.alpha.user.UserViewModelFactory
 import com.google.firebase.firestore.Blob
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -22,6 +24,7 @@ import com.google.firebase.ktx.Firebase
 open class BaseActivity: AppCompatActivity() {
     private val userDb by lazy { Firebase.firestore.collection("Users")}
     private lateinit var loginViewModel: LoginViewModel
+    private lateinit var usersViewModel: UserViewModel
     private val login = LoginRepository()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -76,8 +79,12 @@ open class BaseActivity: AppCompatActivity() {
                 }
             })
 
-            //track address
-           // addressViewModel = ViewModelProvider(this).get(AddressViewModel::class.java)
+            if(user.role!=4) {
+                usersViewModel = ViewModelProvider(
+                    this,
+                    UserViewModelFactory(user.role)
+                ).get(UserViewModel::class.java)
+            }
 
         }
     }

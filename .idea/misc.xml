@@ -8,16 +8,33 @@
         <entry key="..\:/Users/Acer/Documents/GitHub/alpha/app/src/main/res/drawable/ic_image_black.xml" value="0.146" />
         <entry key="..\:/Users/Acer/Documents/GitHub/alpha/app/src/main/res/drawable/ic_me_white.xml" value="0.1" />
         <entry key="..\:/Users/Acer/Documents/GitHub/alpha/app/src/main/res/font/delius.xml" value="0.10277777777777777" />
+        <entry key="..\:/Users/Acer/Documents/GitHub/alpha/app/src/main/res/layout/activity_delivery_man.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Acer/Documents/GitHub/alpha/app/src/main/res/layout/activity_login.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/Acer/Documents/GitHub/alpha/app/src/main/res/layout/activity_manager.xml" value="0.2476310802274163" />
         <entry key="..\:/Users/Acer/Documents/GitHub/alpha/app/src/main/res/layout/fragment_account_change_password.xml" value="0.17074275362318841" />
         <entry key="..\:/Users/Acer/Documents/GitHub/alpha/app/src/main/res/layout/fragment_account_list.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Acer/Documents/GitHub/alpha/app/src/main/res/layout/fragment_account_list_edit.xml" value="0.1403985507246377" />
         <entry key="..\:/Users/Acer/Documents/GitHub/alpha/app/src/main/res/layout/fragment_account_profile.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/Acer/Documents/GitHub/alpha/app/src/main/res/layout/fragment_change_password.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Acer/Documents/GitHub/alpha/app/src/main/res/layout/fragment_dm_me.xml" value="0.1" />
+        <entry key="..\:/Users/Acer/Documents/GitHub/alpha/app/src/main/res/layout/fragment_edit_staff.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Acer/Documents/GitHub/alpha/app/src/main/res/layout/fragment_forgot_password.xml" value="0.1" />
-        <entry key="..\:/Users/Acer/Documents/GitHub/alpha/app/src/main/res/layout/fragment_login.xml" value="0.17074275362318841" />
-        <entry key="..\:/Users/Acer/Documents/GitHub/alpha/app/src/main/res/layout/fragment_register.xml" value="0.17074275362318841" />
+        <entry key="..\:/Users/Acer/Documents/GitHub/alpha/app/src/main/res/layout/fragment_login.xml" value="0.22" />
+        <entry key="..\:/Users/Acer/Documents/GitHub/alpha/app/src/main/res/layout/fragment_mng_me.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Acer/Documents/GitHub/alpha/app/src/main/res/layout/fragment_mng_staff.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Acer/Documents/GitHub/alpha/app/src/main/res/layout/fragment_order_detail.xml" value="0.25" />
+        <entry key="..\:/Users/Acer/Documents/GitHub/alpha/app/src/main/res/layout/fragment_p_u_item_detail.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Acer/Documents/GitHub/alpha/app/src/main/res/layout/fragment_pick_up_detail.xml" value="0.22" />
+        <entry key="..\:/Users/Acer/Documents/GitHub/alpha/app/src/main/res/layout/fragment_profile.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Acer/Documents/GitHub/alpha/app/src/main/res/layout/fragment_register.xml" value="0.33" />
+        <entry key="..\:/Users/Acer/Documents/GitHub/alpha/app/src/main/res/layout/fragment_take_order_list.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Acer/Documents/GitHub/alpha/app/src/main/res/layout/pickup_detail_item.xml" value="0.25" />
+        <entry key="..\:/Users/Acer/Documents/GitHub/alpha/app/src/main/res/layout/pickup_item.xml" value="0.33" />
         <entry key="..\:/Users/Acer/Documents/GitHub/alpha/app/src/main/res/layout/staff_item.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Acer/Documents/GitHub/alpha/app/src/main/res/layout/user_item.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Acer/Documents/GitHub/alpha/app/src/main/res/menu/delivery_man_menu.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Acer/Documents/GitHub/alpha/app/src/main/res/menu/main.xml" value="0.1" />
+        <entry key="..\:/Users/Acer/Documents/GitHub/alpha/app/src/main/res/menu/manager_menu.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Dell/OneDrive - Omesti Berhad/Documents/alpha/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/Dell/OneDrive - Omesti Berhad/Documents/alpha/app/src/main/res/layout/fragment_account.xml" value="0.2" />
         <entry key="..\:/Users/Dell/OneDrive - Omesti Berhad/Documents/alpha/app/src/main/res/layout/fragment_home.xml" value="0.2" />
