@@ -1,14 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_height="wrap_content"
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent">
+
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".deliveryman.DmMeFragment">
+    tools:context=".deliveryman.DmMeFragment"
+    android:paddingBottom="100dp"
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="240dp"
+        android:padding="20dp"
+        android:background="#BDB5D5"
+        >
 
-</FrameLayout>
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:layout_marginLeft="10dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/ic_image_black" />
+
+        <TextView
+            android:id="@+id/userNameTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@id/image"
+            android:includeFontPadding="false"
+            android:text="CZT"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/nameTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chuah Zheng Tong"
+            android:textSize="14sp"
+            android:includeFontPadding="false"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/userNameTxt"
+            android:layout_marginLeft="10dp"
+            />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/profileBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Edit Profile"
+        android:textAlignment="viewStart"
+        android:drawableEnd="@drawable/ic_navigate_next_24"
+        style="?attr/materialButtonOutlinedStyle" />
+
+    <Button
+        android:id="@+id/changePwdBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Change Password"
+        android:textAlignment="viewStart"
+        android:drawableEnd="@drawable/ic_navigate_next_24"
+        style="?attr/materialButtonOutlinedStyle" />
+
+    <Button
+        android:id="@+id/deliveryHistoryBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delivery History"
+        android:textAlignment="viewStart"
+        android:drawableEnd="@drawable/ic_navigate_next_24"
+        style="?attr/materialButtonOutlinedStyle" />
+
+    <Button
+        android:id="@+id/logOutBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Log Out"
+        android:layout_gravity="bottom"
+        style="?attr/materialButtonStyle"
+        />
+
+</LinearLayout>
+</ScrollView>

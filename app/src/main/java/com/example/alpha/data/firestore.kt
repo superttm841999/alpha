@@ -102,6 +102,7 @@ data class Order(
     var voucherValue : Int = 0,
     //Pending-0 In Progress-1  Done -2
     var progress : Int = 0
+
 ){
     @get:Exclude
     var count: Int = 0

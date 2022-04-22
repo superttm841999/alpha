@@ -107,13 +107,10 @@
             android:id="@+id/pickupBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pick Up"
+            android:text="Take Order"
             android:paddingEnd="10dp"
             android:layout_alignParentEnd="true"
             />
      </RelativeLayout>
-
-
-
 
 </LinearLayout>

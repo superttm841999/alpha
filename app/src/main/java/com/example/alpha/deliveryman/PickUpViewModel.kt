@@ -14,9 +14,10 @@ class PickUpViewModel: ViewModel() {
     var pickupList = listOf<PickUp>()
     var pickups = MutableLiveData<List<PickUp>>()
     var pickupStatus = MutableLiveData<PickUpStatus>()
+    var canPickUpAnother = MutableLiveData<Another>()
 
     init{
-        order.whereEqualTo("status", 1).whereEqualTo("progress", 1).addSnapshotListener { snapshots, _ ->
+        order.whereEqualTo("status", 1).whereEqualTo("progress", 0).addSnapshotListener { snapshots, _ ->
             if(snapshots!=null){
                 var pList = mutableListOf<PickUp>()
                 for (dc in snapshots) {

@@ -1,15 +1,23 @@
 package com.example.alpha.deliveryman
 
+import android.content.DialogInterface
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
 import androidx.core.os.bundleOf
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.alpha.LoginActivity
 import com.example.alpha.R
 import com.example.alpha.databinding.FragmentPUItemDetailBinding
 import com.example.alpha.databinding.FragmentTakeOrderListBinding
+import com.example.alpha.util.rmUserSR
 import com.google.firebase.firestore.Blob
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -22,24 +30,31 @@ class PUItemDetailFragment : Fragment() {
     private val order = Firebase.firestore.collection("OrderFood")
     private val food = Firebase.firestore.collection("Food")
     private val id by lazy { requireArguments().getString("orderId") ?: "" }
+    private val model: PickUpViewModel by activityViewModels()
+    private val nav by lazy { findNavController() }
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+
+        var orderId = id
+        if(model.canPickUpAnother.value?.canOrNot == false){
+            model.canPickUpAnother.value?.progress?.let { statusDialog(it) }
+        }
         // Inflate the layout for this fragment
         binding = FragmentPUItemDetailBinding.inflate(inflater, container, false)
-        var list = runBlocking { getOrderItems(id) }
-        val adapter = PickUpItemAdapter() { holder, pickup ->
+
+
+
+        binding.pickupBtn.setOnClickListener {
+            var pickUpStatus = PickUpStatus(orderId, 0)
+            model.pickupStatus.value = pickUpStatus
+           // nav.navigate(R.id.action_PUItemDetailFragment_to_pickUpSellerFragment)
         }
 
-        val rv = binding.itemsRV
-        rv.itemAnimator = null
-        val layoutManager = LinearLayoutManager(activity)
-        rv.adapter = adapter
-        rv.layoutManager = layoutManager
-        adapter.submitList(list)
         return binding.root
     }
 
@@ -63,5 +78,27 @@ class PUItemDetailFragment : Fragment() {
         foodItem["image"] = result.data?.get("image") ?: Blob.fromBytes(ByteArray(0))
         return foodItem
 
+    }
+
+    private fun statusDialog(status: Int){
+        var message = when(status){
+            1 -> "Please go to take your accepted order food from seller"
+            2 -> "Please send your picked up food to customer"
+            else -> ""
+        }
+        var dialog = AlertDialog.Builder(requireContext())
+            .setTitle("Delivery Order Status")
+            .setMessage(message)
+            .setPositiveButton("OK", DialogInterface.OnClickListener { dialogInterface, i ->
+                when(status){
+                    1 -> nav.navigate(R.id.pickUpSellerFragment)
+                    2 -> nav.navigate(R.id.deliveryToCustomerFragment)
+                    else -> nav.navigate(R.id.takeOrderListFragment)
+                }
+                dialogInterface.dismiss()
+
+            }).create()
+        dialog.setCancelable(false)
+        dialog.show()
     }
 }

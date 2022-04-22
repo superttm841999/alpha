@@ -3,21 +3,59 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/delivery_man_nav"
-    app:startDestination="@id/takeOrderListFragment2">
+    app:startDestination="@id/takeOrderListFragment">
 
     <fragment
-        android:id="@+id/takeOrderListFragment2"
+        android:id="@+id/takeOrderListFragment"
         android:name="com.example.alpha.deliveryman.TakeOrderListFragment"
         android:label="fragment_take_order_list"
-        tools:layout="@layout/fragment_take_order_list" />
+        tools:layout="@layout/fragment_take_order_list" >
+        <action
+            android:id="@+id/action_takeOrderListFragment_to_pickUpSellerFragment"
+            app:destination="@id/pickUpSellerFragment" />
+    </fragment>
     <fragment
-        android:id="@+id/dmMeFragment2"
+        android:id="@+id/dmMeFragment"
         android:name="com.example.alpha.deliveryman.DmMeFragment"
         android:label="fragment_dm_me"
-        tools:layout="@layout/fragment_dm_me" />
+        tools:layout="@layout/fragment_dm_me" >
+        <action
+            android:id="@+id/action_dmMeFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_dmMeFragment_to_accountChangePasswordFragment2"
+            app:destination="@id/accountChangePasswordFragment2" />
+        <action
+            android:id="@+id/action_dmMeFragment_to_deliveryHistoryFragment"
+            app:destination="@id/deliveryHistoryFragment" />
+    </fragment>
     <fragment
-        android:id="@+id/PUItemDetailFragment"
-        android:name="com.example.alpha.deliveryman.PUItemDetailFragment"
-        android:label="fragment_p_u_item_detail"
-        tools:layout="@layout/fragment_p_u_item_detail" />
+        android:id="@+id/pickUpSellerFragment"
+        android:name="com.example.alpha.deliveryman.PickUpSellerFragment"
+        android:label="fragment_pick_up_seller"
+        tools:layout="@layout/fragment_pick_up_seller" >
+        <action
+            android:id="@+id/action_pickUpSellerFragment_to_deliveryToCustomerFragment"
+            app:destination="@id/deliveryToCustomerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/deliveryToCustomerFragment"
+        android:name="com.example.alpha.deliveryman.DeliveryToCustomerFragment"
+        android:label="fragment_delivery_to_customer"
+        tools:layout="@layout/fragment_delivery_to_customer" />
+    <fragment
+        android:id="@+id/accountChangePasswordFragment2"
+        android:name="com.example.alpha.ui.AccountChangePasswordFragment"
+        android:label="fragment_account_change_password"
+        tools:layout="@layout/fragment_account_change_password" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.alpha.manager.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/deliveryHistoryFragment"
+        android:name="com.example.alpha.deliveryman.DeliveryHistoryFragment"
+        android:label="fragment_delivery_history"
+        tools:layout="@layout/fragment_delivery_history" />
 </navigation>
