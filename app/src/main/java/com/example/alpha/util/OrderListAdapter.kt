@@ -57,10 +57,10 @@ class OrderListAdapter (
                         holder.imgLogo.setImageBitmap(l.logo.toBitmap())
                         holder.txtName.text  = l.name
                         var status = when(order.status){
-                            0 ->  "进行中"
-                            1 ->  "已接受"
-                            2 ->  "已拒绝"
-                            else ->  "啥玩意"
+                            0 ->  "Pending"
+                            1 ->  "Accepted"
+                            2 ->  "Rejected"
+                            else ->  "What?!"
                         }
                         holder.txtStatus.text  = status
                         when(order.status){

@@ -43,9 +43,9 @@ class SellerAdapter (
         holder.txtShopName.text = form.name
 
         var status = when(form.status){
-            0 ->  "审核中"
-            1 ->  "已批准"
-            2 ->  "已拒绝"
+            0 ->  "Pending"
+            1 ->  "Approved"
+            2 ->  "Rejected"
             else ->  "???"
         }
 

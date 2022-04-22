@@ -12,16 +12,16 @@
         <item
             android:id="@+id/accountFragment"
             android:icon="@drawable/ic_launcher_foreground"
-            android:title="户口" />
+            android:title="Account" />
         <item
             android:id="@+id/shopFoodFragment"
-            android:title="店家/食物" />
+            android:title="Shop/Food" />
         <item
             android:id="@+id/orderFragment"
-            android:title="订单" />
+            android:title="Order" />
         <item
             android:id="@+id/logoutFragment"
-            android:title="登出" />
+            android:title="Logout" />
     </group>
 
 </menu>

@@ -42,7 +42,7 @@ class ShopOrderAdapter (
             holder.imgLogo.setImageBitmap(application.logo.toBitmap())
             holder.txtName.text = application.name
 
-            holder.txtCount.text = "${application.count} 条订单 "
+            holder.txtCount.text = "${application.count} order(s) "
             fn(holder, application)
         }
     }
