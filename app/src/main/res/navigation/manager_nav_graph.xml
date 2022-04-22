@@ -41,7 +41,7 @@
     <fragment
         android:id="@+id/changePasswordFragment"
         android:name="com.example.alpha.manager.ChangePasswordFragment"
-        android:label="Change Your Password"
+        android:label="Change Password"
         tools:layout="@layout/fragment_change_password" />
     <fragment
         android:id="@+id/profileFragment3"
@@ -51,6 +51,6 @@
     <fragment
         android:id="@+id/editStaffFragment"
         android:name="com.example.alpha.manager.EditStaffFragment"
-        android:label="fragment_edit_staff"
+        android:label="Edit Staff"
         tools:layout="@layout/fragment_edit_staff" />
 </navigation>

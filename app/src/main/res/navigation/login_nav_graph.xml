@@ -20,7 +20,7 @@
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.example.alpha.ui.RegisterFragment"
-        android:label="Sign Up A New Account"
+        android:label="Sign Up Delivery Man Account"
         tools:layout="@layout/fragment_register" />
     <fragment
         android:id="@+id/forgotPasswordFragment"

@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/takeOrderListFragment"
         android:name="com.example.alpha.deliveryman.TakeOrderListFragment"
-        android:label="fragment_take_order_list"
+        android:label="Take Order Here"
         tools:layout="@layout/fragment_take_order_list" >
         <action
             android:id="@+id/action_takeOrderListFragment_to_pickUpSellerFragment"
@@ -17,7 +17,7 @@
     <fragment
         android:id="@+id/dmMeFragment"
         android:name="com.example.alpha.deliveryman.DmMeFragment"
-        android:label="fragment_dm_me"
+        android:label="Me"
         tools:layout="@layout/fragment_dm_me" >
         <action
             android:id="@+id/action_dmMeFragment_to_profileFragment"
@@ -32,7 +32,7 @@
     <fragment
         android:id="@+id/pickUpSellerFragment"
         android:name="com.example.alpha.deliveryman.PickUpSellerFragment"
-        android:label="fragment_pick_up_seller"
+        android:label="Pick Up From Seller"
         tools:layout="@layout/fragment_pick_up_seller" >
         <action
             android:id="@+id/action_pickUpSellerFragment_to_deliveryToCustomerFragment"
@@ -41,21 +41,21 @@
     <fragment
         android:id="@+id/deliveryToCustomerFragment"
         android:name="com.example.alpha.deliveryman.DeliveryToCustomerFragment"
-        android:label="fragment_delivery_to_customer"
+        android:label="Delivery To Customer"
         tools:layout="@layout/fragment_delivery_to_customer" />
     <fragment
         android:id="@+id/accountChangePasswordFragment2"
         android:name="com.example.alpha.ui.AccountChangePasswordFragment"
-        android:label="fragment_account_change_password"
+        android:label="Change Your Password"
         tools:layout="@layout/fragment_account_change_password" />
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.example.alpha.manager.ProfileFragment"
-        android:label="fragment_profile"
+        android:label="Edit Profile"
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/deliveryHistoryFragment"
         android:name="com.example.alpha.deliveryman.DeliveryHistoryFragment"
-        android:label="fragment_delivery_history"
+        android:label="Delivery History"
         tools:layout="@layout/fragment_delivery_history" />
 </navigation>

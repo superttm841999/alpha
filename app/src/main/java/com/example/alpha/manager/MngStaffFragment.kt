@@ -31,6 +31,7 @@ class MngStaffFragment : Fragment() {
     private val db by lazy { Firebase.firestore.collection("Users").whereEqualTo("role", 1) }
     private val userDB = Firebase.firestore.collection("Users")
     private var tracker: SelectionTracker<Long>? = null
+    private var adt: UserAdapter? =null
 
 
     override fun onCreateView(
@@ -75,6 +76,7 @@ class MngStaffFragment : Fragment() {
         rv.itemAnimator = null;
 
         val layoutManager = LinearLayoutManager(activity)
+        adt = adapter
         rv.adapter = adapter
         rv.layoutManager = layoutManager
         rv.addItemDecoration(
@@ -239,6 +241,7 @@ class MngStaffFragment : Fragment() {
                 checkedItems.forEachIndexed { index, element ->
                     if (element as Boolean) {
                         deleteList.add(userIds[index])
+                        adt?.notifyItemRemoved(index)
                     }
                 }
                 Firebase.firestore.runBatch { batch ->
