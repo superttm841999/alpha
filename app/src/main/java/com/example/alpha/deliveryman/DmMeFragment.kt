@@ -41,7 +41,7 @@ class DmMeFragment : Fragment() {
         }
 
         binding.changePwdBtn.setOnClickListener {
-            nav.navigate(R.id.action_dmMeFragment_to_profileFragment)
+            nav.navigate(R.id.action_dmMeFragment_to_accountChangePasswordFragment2)
         }
 
         binding.deliveryHistoryBtn.setOnClickListener {

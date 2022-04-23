@@ -117,10 +117,11 @@ class AccountListFragment : Fragment() {
 
                     var list: List<LUser>?=null
 
-
-                    if(adapter.currentList.size!=0){
-                        list = tracker?.selection?.map {
-                            adapter.currentList[it.toInt()] }?.toList()
+                    var al = adapter.currentList
+                    if (adapter.currentList.size != 0) {
+                        list = tracker?.selection?.mapNotNull {
+                            al?.getOrNull(it.toInt())
+                        }?.toList()
                     }
 
                     binding.blockBtn.setOnClickListener {
