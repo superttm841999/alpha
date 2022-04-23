@@ -101,7 +101,9 @@ data class Order(
     var voucherName : String = "",
     var voucherValue : Int = 0,
     //Pending-0 In Progress-1  Done -2
-    var progress : Int = 0
+    var progress : Int = 0,
+    var address: String = "",
+    var paymentMethod:String = ""
 
 ){
     @get:Exclude
