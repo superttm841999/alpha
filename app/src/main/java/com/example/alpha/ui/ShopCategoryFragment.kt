@@ -35,9 +35,6 @@ class ShopCategoryFragment : Fragment() {
         binding.btnInsert.setOnClickListener {
             nav.navigate(R.id.insertCategoryFragment)
         }
-        binding.btnDeleteAll.setOnClickListener {
-            deleteAll()
-        }
 
         adapter = CategoryAdapter() { holder, category ->
             // Item click
@@ -92,8 +89,5 @@ class ShopCategoryFragment : Fragment() {
         return super.onOptionsItemSelected(item)
     }
 
-    private fun deleteAll() {
-        vm.deleteAll()
-    }
 
 }

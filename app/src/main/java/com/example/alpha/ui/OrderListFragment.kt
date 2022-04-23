@@ -41,7 +41,7 @@ class OrderListFragment : Fragment() {
         vm.getAllOrder().observe(viewLifecycleOwner){ list ->
 
             adapter.submitList(list)
-            binding.txtCount.text = "${list.size} 记录"
+            binding.txtCount.text = "${list.size} records"
 
         }
 

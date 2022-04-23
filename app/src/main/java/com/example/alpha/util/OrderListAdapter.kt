@@ -69,9 +69,9 @@ class OrderListAdapter (
                             2 -> holder.txtStatus.setTextColor(Color.parseColor("#FF0000"))
                             else -> ""
                         }
-                        holder.txtOrderId.text  = "产品ID # ${order.docId}"
+                        holder.txtOrderId.text  = "Order Id # ${order.docId}"
                         holder.txtTotal.text  = "RM ${formatter.format(order.payment)}"
-                        holder.txtCount.text = "- ${order.count} 产品"
+                        holder.txtCount.text = "- ${order.count} food(s)"
                         fn(holder, order)
                 }
             }
