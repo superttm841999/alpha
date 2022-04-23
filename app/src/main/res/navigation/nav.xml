@@ -57,7 +57,7 @@
     <fragment
         android:id="@+id/updateVoucherFragment"
         android:name="com.example.alpha.ui.UpdateVoucherFragment"
-        android:label="fragment_update_voucher"
+        android:label="Update Voucher"
         tools:layout="@layout/fragment_update_voucher" />
     <fragment
         android:id="@+id/sellerListAdminFragment"
@@ -97,12 +97,12 @@
     <fragment
         android:id="@+id/accountProfileFragment"
         android:name="com.example.alpha.ui.AccountProfileFragment"
-        android:label="fragment_account_profile"
+        android:label="Aoocunt Profile"
         tools:layout="@layout/fragment_account_profile" />
     <fragment
         android:id="@+id/accountChangePasswordFragment"
         android:name="com.example.alpha.ui.AccountChangePasswordFragment"
-        android:label="fragment_account_change_password"
+        android:label="Change password"
         tools:layout="@layout/fragment_account_change_password" />
     <fragment
         android:id="@+id/accountListFragment"
@@ -112,6 +112,6 @@
     <fragment
         android:id="@+id/accountListEditFragment"
         android:name="com.example.alpha.ui.AccountListEditFragment"
-        android:label="fragment_account_list_edit"
+        android:label="Update Account"
         tools:layout="@layout/fragment_account_list_edit" />
 </navigation>

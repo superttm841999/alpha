@@ -1,17 +1,24 @@
 package com.example.alpha.ui
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.view.*
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.example.alpha.R
 import com.example.alpha.data.CategoryViewModel
+import com.example.alpha.data.Seller
 import com.example.alpha.databinding.FragmentShopCategoryBinding
 import com.example.alpha.util.CategoryAdapter
 import com.example.alpha.util.deleteAllCategoryDialog
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.firestore.ktx.toObjects
+import com.google.firebase.ktx.Firebase
+import kotlinx.coroutines.launch
 
 class ShopCategoryFragment : Fragment() {
 
@@ -38,7 +45,28 @@ class ShopCategoryFragment : Fragment() {
                 nav.navigate(R.id.updateCategoryFragment, bundleOf("id" to category.docId))
             }
             // Delete button click
-            holder.btnDelete.setOnClickListener { deleteAllCategoryDialog(category.docId) }
+
+            holder.btnDelete.setOnClickListener {
+                lifecycleScope.launch{
+
+                    Firebase.firestore.collection("Seller").whereEqualTo("category",category.name).get().addOnSuccessListener {
+                            snap ->
+                        val list = snap.toObjects<Seller>()
+                        if(list.isNotEmpty()){
+                            AlertDialog.Builder(context)
+                                .setIcon(R.drawable.ic_error)
+                                .setTitle("Error")
+                                .setMessage("Category cannot be deleted, some sellers is using it.")
+                                .setPositiveButton("Back", null)
+                                .show()
+                        }else{
+                            deleteAllCategoryDialog(category.docId) }
+                        }
+
+                    }
+                }
+
+
         }
         binding.rvCat.adapter = adapter
         binding.rvCat.addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
