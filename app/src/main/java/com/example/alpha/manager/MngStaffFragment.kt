@@ -88,7 +88,7 @@ class MngStaffFragment : Fragment() {
         tracker = SelectionTracker.Builder<Long>(
             "mySelection",
             rv,
-            MyItemKeyProvider(rv),
+            StableIdKeyProvider(rv),
             MyItemDetailsLookup(rv),
             StorageStrategy.createLongStorage()
         ).withSelectionPredicate(
@@ -125,10 +125,10 @@ class MngStaffFragment : Fragment() {
 
                     var list: List<LUser>? = null
 
-
+                    var al = adapter.currentList
                     if (adapter.currentList.size != 0) {
-                        list = tracker?.selection?.map {
-                            adapter.currentList[it.toInt()]
+                        list = tracker?.selection?.mapNotNull {
+                            al?.getOrNull(it.toInt())
                         }?.toList()
                     }
 
